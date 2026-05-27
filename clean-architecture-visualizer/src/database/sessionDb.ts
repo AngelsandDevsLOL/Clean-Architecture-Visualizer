@@ -4,7 +4,7 @@ import path from "path";
 
 export const SESSION_FILE = path.join(
   os.tmpdir(),
-  "clean-arch-cli-session.json"
+  `clean-arch-cli-session-${process.env.JEST_WORKER_ID ?? "default"}.json`
 );
 
 export class SessionDB<T extends object> {
